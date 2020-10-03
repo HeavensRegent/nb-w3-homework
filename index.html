@@ -52,12 +52,16 @@
           </div>
         </div>
         <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+          <div class="form-group has-feedback">
+            <textarea
+              readonly
+              id="password"
+              placeholder="Your Secure Password"
+              aria-label="Generated Password"
+              class="form-control"
+            ></textarea>
+            <i class="glyphicon glyphicon-user form-control-feedback"></i>
+          </div>
           <p class="errorMessage"></p>
         </div>
         <div class="card-footer">

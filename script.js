@@ -20,6 +20,9 @@ function writePassword() {
 	var passwordText = document.querySelector("#password");
 
 	passwordText.value = password;
+
+	copyToClipboard();
+	displayError("Ps. I copied your new password to the clipboard");
 }
 
 //Get all of the parameters for the password generation
@@ -90,15 +93,18 @@ function generatePassword(params) {
 }
 
 function displayError(errorMessage) {
-	if (errorMessage)
-		document.querySelector(".errorMessage").textContent += errorMessage;
-	else document.querySelector(".errorMessage").textContent = "";
+	if (errorMessage) {
+		var error = document.createElement("p");
+		error.textContent = errorMessage;
+		document.querySelector(".errorMessage").append(error);
+	} else document.querySelector(".errorMessage").innerHTML = "";
 }
 
 //Return a random character array
 function getRandomCharacterArray() {
 	var arrayNum = Math.floor(Math.random() * 4);
 
+	//Depending on the random number choose a different array
 	switch (arrayNum) {
 		case 0:
 			return lowercaseArray;
@@ -109,6 +115,20 @@ function getRandomCharacterArray() {
 		case 3:
 			return specialCharactersArray;
 	}
+}
+
+//Copy the password to the clipboard
+function copyToClipboard() {
+	/* Get the text field */
+	var copyText = document.getElementById("password");
+
+	/* Select the text field */
+	copyText.select();
+	copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+	/* Copy the text inside the text field */
+	document.execCommand("copy");
+	window.getSelection().removeAllRanges();
 }
 
 // Add event listener to generate button
