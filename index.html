@@ -7,6 +7,7 @@
     <title>Password Generator</title>
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -17,6 +18,38 @@
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="passwordLength">Password Length (8 - 128)</label>
+              <input type="number" class="form-control" name="passwordLength" id="passwordLength" placeholder="8-128" min="8" max="128">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="" id="lowerCaseCheckbox" > Lowercase
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="" id="upperCaseCheckbox" > Uppercase
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="" id="numericCheckbox" > Numeric
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="" id="specialCharacterCheckbox" > Special Characters
+              </label>
+            </div>
+          </div>
         </div>
         <div class="card-body">
           <textarea
